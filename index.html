@@ -1,0 +1,94 @@
+<!-- Created by Sauce_coder -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Standard Clock</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id = "clock" >
+        <div class="analog">
+            <span class="dot"></span>
+            <span class="hours hour-1">1</span>
+            <span class="hours hour-2">2</span>
+            <span class="hours hour-3">3</span>
+            <span class="hours hour-4">4</span>
+            <span class="hours hour-5">5</span>
+            <span class="hours hour-6">6</span>
+            <span class="hours hour-7">7</span>
+            <span class="hours hour-8">8</span>
+            <span class="hours hour-9">9</span>
+            <span class="hours hour-10">10</span>
+            <span class="hours hour-11">11</span>
+            <span class="hours hour-12">12</span>
+            <span class="sign">sauce_coder</span>
+            <div class="minute-wrapper">
+            <span class="minute-hand">
+                <span class="hand"></span>
+            </span>
+            </div>    
+            <div class="hour-wrapper">
+            <span class="hour-hand">
+                <span class="hand"></span>
+            </span>
+            </div>
+            <span class="second-wrapper">
+                <span class="second-hand">
+                    <span class="hand"></span>
+                </span>
+            </span>
+        </div>
+        <div class="digital"> 
+            <span class="time hour">00</span>
+            <span >:</span>
+            <span class="time minutes">00</span>
+            <span >:</span>
+            <span class="time seconds">00</span>
+            <span class="session">AM</span>
+        </div>
+        </div>
+        <script>
+
+function showTime () {
+    var time = new Date ();   
+    var sec = time.getSeconds();
+    var sec2 = time.getSeconds() * 6;
+    var min = time.getMinutes();
+    var min2 = time.getMinutes() * 6;
+    var hour = time.getHours();
+    var hour2 = time.getHours() * 30 + Math.round(min2 / 12);
+    var session = document.querySelector(".session");
+    min = correctTime(min);
+    sec = correctTime(sec);
+    
+    if (hour == 0) {
+        hour = 12;
+    }
+    if(hour > 12){
+        hour = hour - 12;
+        session.innerHTML ="PM";
+    }
+    if(hour < 10 ){
+        hour = "0" + hour
+    }
+    document.querySelector(".hour").innerHTML =  hour ;
+    document.querySelector(".minutes").innerHTML = min;
+    document.querySelector(".seconds").innerHTML = sec;
+    document.querySelector(".second-wrapper").style.transform = "rotate(" + sec2 + "deg)"
+    document.querySelector(".minute-wrapper").style.transform = "rotate(" + min2 + "deg)"
+    document.querySelector(".hour-wrapper").style.transform = "rotate(" + hour2 + "deg)"
+}
+function correctTime(i) {
+    if (i < 10 ) {
+        i = "0" + i;
+        
+    }
+    return i;
+}
+setInterval (showTime, 1000);
+showTime()
+
+        </script>
+    </body>
+</html>

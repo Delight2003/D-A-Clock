@@ -1,0 +1,201 @@
+/* Created by Sauce_coder */
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Varela+Round&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+body{
+  background:linear-gradient(to bottom right, #f9b1d8 5%, #8609d3 100%); 
+  width:100%; 
+  height:100vh;
+  color:#fff;
+}
+
+#clock{
+    text-align:center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:300px;
+    height:350px;
+    border-radius:50% 50% 5px 5px;
+    background:#222;
+    z-index:0;
+    box-shadow:0px 4px 8px 0px rgba(0,0,0,0.2),
+                         0px 3px 20px 0px rgba(0,0,0,0.4);
+}
+.sign{
+    font-size:10px;
+    color:teal;
+    position:absolute;
+    top:160px;
+    left:90px;
+    font-family:'Varela Round',sans-serif;
+}
+#clock .analog{
+    width:210px;
+    height:210px;
+    border-radius:50%;
+    position:absolute;
+    top:35%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    /*box-shadow: inset 10px 10px 20px #dedede,
+            inset -10px -10px 20px #ffffff;*/
+    box-shadow: inset 12px 12px 105px #121212,
+            inset -12px -12px 105px #252525;
+}
+.dot{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background:#121212;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    z-index:11;
+}
+.hours{
+    position:absolute;
+    color:cyan;
+    font-size:12px;
+    font-weight:bold;
+    font-family:'Courier Prime',sans-serif;
+}
+.hour-1{
+   top:20px; 
+   right:55px;
+}
+.hour-2{
+    top:55px;
+    right:20px;
+}
+.hour-3{
+    top:100px;
+    right:10px;
+}
+.hour-4{
+    top:145px;
+    right:20px;
+}
+.hour-5{
+    top:180px;
+    right:55px;
+}
+.hour-6{
+    bottom:5px;
+    left:100px;
+}
+.hour-7{
+   top:180px; 
+   left:55px;
+}
+.hour-8{
+    top:145px;
+    left:20px;
+}
+.hour-9{
+    top:100px;
+    left:10px;
+}
+.hour-10{
+    top:55px;
+    left:20px;
+}
+.hour-11{
+    top:20px;
+    left:55px;
+}
+.hour-12{
+    top:5px;
+    left:100px;
+}
+
+.minute-wrapper{
+    width:180px;
+    height:180px;
+    position:absolute;
+    top:15px;
+    left:15px;
+    border-radius:50%;
+}
+.minute-hand{
+    position:relative;
+}
+.minute-hand .hand{
+    width:2px;
+    height:70px;
+    background:#fff;
+    position:absolute;
+    top:20px;
+    left:-1px;
+    border-radius:50% 50% 0 0;
+}
+.hour-wrapper{
+    width:150px;
+    height:150px;
+    position:absolute;
+    top:30px;
+    left:30px;
+    border-radius:50%;
+}
+.hour-hand{
+    position:relative;
+}
+.hour-hand .hand{
+    width:3px;
+    height:50px;
+    background:#fff;
+    position:absolute;
+    top:25px;
+    left:-1.5px;
+    border-radius:50% 50% 0 0;
+}
+.second-wrapper{
+    width:150px;
+    height:150px;
+    position:absolute;
+    top:30px;
+    left:30px;
+    border-radius:50%;
+}
+.second-hand{
+    position:relative;
+}
+.second-hand .hand{
+    width:1px;
+    height:85px;
+    background:#cf0000;
+    position:absolute;
+    top:-5px;
+    left:0px;
+    border-radius:50% 50% 0 0;
+    
+}
+
+#clock .digital {
+    background:#252525;
+    border-radius:5px;
+    padding:20px;
+    color:cyan;
+    font-size:22px;
+    font-family:'Courier Prime', monospace;
+    z-index:1;
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    width:270px;
+    box-shadow: inset 5px 8px 42px #121212,
+            inset -8px -8px 43px #252525;
+   /*box-shadow: inset 5px 5px 15px #dedede,
+            inset -8px -8px 15px #ffffff;*/
+}
